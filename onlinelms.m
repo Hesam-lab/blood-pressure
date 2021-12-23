@@ -1,9 +1,9 @@
-function w = onlinelms(x,d,mu,p)
-L = length(d);	
+function w = onlinelms(x,y,mu,p)
+L = length(y);	
 epoch = L;
 w = zeros(epoch,p);
 for k=1:epoch
     n = mod(k-1,L)+1;
-    e = d(n)-x(n,:)*w(k,:)';
+    e = y(n)-x(n,:)*w(k,:)';
     w(k+1,:) = w(k,:) + mu/k*e*x(n,:); 
 end
