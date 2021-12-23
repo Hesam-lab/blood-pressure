@@ -12,7 +12,7 @@ clc; clear; close all;
 % written by: Hesam Shokouh Alaei
 % 
 % data description==> Fs:200 Hz, length: 10 seconds
-data = load('Data_Project1.mat');
+data = load('blood_pressure.mat');
 sig1 = data.aortic_data;    % model output
 sig2 = data.radial_data;    % model input
 
