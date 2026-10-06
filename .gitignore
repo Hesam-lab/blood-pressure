@@ -1,0 +1,6 @@
+# MATLAB editor backups and local output
+*.asv
+*.m~
+*.autosave
+*.mex*
+slprj/
