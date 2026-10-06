@@ -1,0 +1,13 @@
+name: MATLAB-compatible regression checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  octave:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install GNU Octave
+        run: sudo apt-get update && sudo apt-get install --no-install-recommends -y octave
+      - name: Run headless regression checks
+        run: octave --no-gui --quiet --eval "addpath('tests'); run_tests"
